@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <link rel="stylesheet" href="/css/cal.css">
+</head>
+
+<body>
+    <div class="main">
+        <div id="head">
+            <h1>CALCULATOR</h1>
+        </div>
+        <div class="button">
+            <input type="text" id="resultinput" style="font-size: 64px;" disabled>
+            <table>
+                <tr>
+                    <th><button onclick="display('1')">1</button></th>
+                    <th><button onclick="display('2')">2</button></th>
+                    <th><button onclick="display('3')">3</button></th>
+                    <th><button onclick="display('+')">+</button></th>
+                </tr>
+                <tr>
+                    <th><button onclick="display('4')">4</button></th>
+                    <th><button onclick="display('5')">5</button></th>
+                    <th><button onclick="display('6')">6</button></th>
+                    <th><button onclick="display('-')">-</button></th>
+                </tr>
+                <tr>
+                    <th><button onclick="display('7')">7</button></th>
+                    <th><button onclick="display('8')">8</button></th>
+                    <th><button onclick="display('9')">9</button></th>
+                    <th><button onclick="display('/')"><span>&#247;</span></button></th>
+                </tr>
+                <tr>
+                    <th><button onclick="display('.')">.</button></th>
+                    <th><button onclick="display('0')">0</button></th>
+                    <th><button onclick="deleteLastCharacter()">del</buttonc>
+                    </th>
+                    <th><button onclick="display('*')"><span>&#215;</span></button></th>
+                </tr>
+                <tr>
+
+                    <th><button onclick="display('(')">&#8317;</button></th>
+                    <th><button onclick="display(`)`)">&#8318;</button></th>
+                    <th><button onclick="displayclear('')">clear</button></th>
+                    <th><button id="cal">&#61;</button></th>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+<script>
+    "use strict"
+    function display(x) {
+        document.body.querySelector("#resultinput").value += x
+    }
+    function displayclear() {
+        document.body.querySelector("#resultinput").value = ""
+
+    }
+    function deleteLastCharacter() {
+        const del = document.getElementById('resultinput');
+        del.value = del.value.slice(0, -1);
+    }
+
+
+    document.querySelector("#cal").addEventListener("click",()=>{
+        try {
+            document.getElementById('resultinput').value = eval(document.getElementById('resultinput').value);
+        } catch (error) {
+            document.getElementById('resultinput').value = 'Error';
+        }
+        
+
+    })
+
+
+    
+
+
+</script>
+
+</html>

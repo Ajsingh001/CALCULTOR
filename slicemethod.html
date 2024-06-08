@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    "use strict"
+    const originalArray = [1, 2, 3, 4, 5];
+
+    // Using one parameter (start index)
+    const slicedArray1 = originalArray.slice(2);
+    console.log(slicedArray1); // Output: [3, 4, 5]
+
+    // Using two parameters (start and end indices)
+    const slicedArray2 = originalArray.slice(0, -1);
+    console.log(slicedArray2); // Output: [2, 3, 4]
+
+
+    //is also used for disappearing last value//
+
+
+
+
+    const arr1 = ["AJSINGH", "CHUMMA", "HARJOT", "HARRY", "AKASH"]
+    console.log(arr1)
+    let outputx = arr1.slice(0, -1);
+    console.log(outputx)
+    // console.log(outputx)
+
+
+
+    //eval funtion//
+    var x = 10;
+    var y = 20;
+    var expression = "x + y";
+    console.log(typeof expression) //without eval funtion it is number//
+    var result = eval(expression)  //here it convert into string to number//
+    console.log(typeof result);
+
+
+</script>
+
+</html>
